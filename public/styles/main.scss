@@ -1,0 +1,25 @@
+@import "variables";
+
+#BoilerPlateV1 {
+  overflow: hidden;
+
+  body {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    * {
+      box-sizing: border-box;
+      user-select: none;
+      font-family: Avenir;
+      scroll-behavior: smooth;
+    }
+
+    @import "layout";
+  }
+
+  //utility classes
+  @import "util";
+}
