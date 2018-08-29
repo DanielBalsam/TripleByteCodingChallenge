@@ -1,2 +1,2 @@
-# boiler-plate
-a boiler plate for coding challenges
+# Triple Byte Coding Challenge
+The challenge was to build a Kanban board that could save itself to the server. This project requires an "app.config" file which isn't check into source control because it contains secrets relevant to the database. If you would like to compile and run the server locally, please reach out to me at danielbalsam@gmail.com and I will send you a one time secret with instructions to set up the app.config.
