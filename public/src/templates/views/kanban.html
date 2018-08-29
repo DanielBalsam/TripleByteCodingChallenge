@@ -1,0 +1,31 @@
+<div class="kanban-container">
+  <div class="kanban-column"
+       ng-repeat="col in kanbanData.cols"
+       ng-init="parentIndex = $index">
+       <div class="column-title">
+         {{col.name}}
+       </div>
+       <div class="column-row"
+            ng-repeat="row in col.rows">
+          <div class="arrow"
+               ng-click="takeKanbanAction('moveTask', {newColumnIndex: (parentIndex - 1), currentColumnIndex:  parentIndex,rowIndex : $index})"
+               ng-if="parentIndex !== 0">
+            <
+          </div>
+         <div class="row-text">{{row}}</div>
+         <div class="arrow"
+              ng-click="takeKanbanAction('moveTask', {newColumnIndex: (parentIndex + 1), currentColumnIndex:  parentIndex,rowIndex : $index})"
+              ng-if="parentIndex !== kanbanData.length - 1">
+           >
+         </div>
+      </div>
+      <div class="add-item"
+           ng-click="takeKanbanAction('addItem', {index : $index, name: col.name})">
+           + Add a card
+      </div>
+  </div>
+</div>
+<div ng-if="kanbanData.actionHistory.length > 0"
+     ng-click="undoLastAction();">
+     Undo
+</div>

@@ -145,7 +145,7 @@ function init() {
       throw err;
     }
 
-    const dbUrl = 'mongodb+srv://AlgoPay:'+config.dbConnectionString+config.dbClusterUrl;
+    const dbUrl = 'mongodb+srv://' + config.dbUser + ':'+config.dbConnectionString+config.dbClusterUrl;
 
     // Once started, connect to Mongo through Mongoose
     mongoose.connect(dbUrl, {}, (err) => {
